@@ -1,7 +1,6 @@
 package pl.patrykzygo.hellomvp.app;
 
 
-
 public class Constants {
 
     public static final String BASE_URL = "https://eun1.api.riotgames.com";

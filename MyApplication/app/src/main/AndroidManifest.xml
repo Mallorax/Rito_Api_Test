@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="Riot_API"
+            android:value="{@RIOT_API_KEY}"/>
         <activity android:name=".ui.ChampionsListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

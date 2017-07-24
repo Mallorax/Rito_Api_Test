@@ -28,11 +28,8 @@ Thumbs.db
 # Android Studio
 *.iml
 .idea
-#.idea/workspace.xml - remove # and delete .idea if it better suit your needs.
 .gradle
 build/
-
+MyApplication/gradle.properties
 .gradlew
-MyApplication/app/.gitignore
 *.pro
-MyApplication/app/src/main/res/values/confidential_resources.xml

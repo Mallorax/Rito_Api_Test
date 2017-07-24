@@ -1,5 +1,7 @@
 apply plugin: 'com.android.application'
 
+def RIOT_API_KEY = '"' + RiotAPIKey + '"' ?: '"Define Riot API key"'
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -10,6 +12,12 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        each {type ->
+            type.buildConfigField 'String', 'RIOT_API_KEY', RIOT_API_KEY
+        }
+        manifestPlaceholders = [
+            riotKey: RIOT_API_KEY
+        ]
     }
     buildTypes {
         release {
