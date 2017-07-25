@@ -30,6 +30,5 @@ Thumbs.db
 .idea
 .gradle
 build/
-MyApplication/gradle.properties
 .gradlew
 *.pro
