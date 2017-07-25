@@ -60,12 +60,8 @@ public class ChampionsListActivity extends AppCompatActivity implements Champion
     }
 
     @Override
-    public void showErrorMessage(int errorMessage) {
-        Toast.makeText(this, "Unable to retrieve champions list. Error code: " + errorMessage, Toast.LENGTH_LONG).show();
+    public void showErrorMessage(String errorMessage) {
+        Toast.makeText(this, errorMessage, Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    public void showErrorMessage() {
-        Toast.makeText(this, "Unable to retrieve champions list.", Toast.LENGTH_LONG).show();
-    }
 }

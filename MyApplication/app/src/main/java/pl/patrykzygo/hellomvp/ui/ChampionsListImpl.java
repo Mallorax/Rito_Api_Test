@@ -43,7 +43,7 @@ public class ChampionsListImpl implements ChampionsListPresenter {
             public void onResponse(Call<ChampionListDto> call, Response<ChampionListDto> response) {
                 if (response.code() != 200) {
                     view.hideLoading();
-                    view.showErrorMessage(response.code());
+                    view.showErrorMessage("Error: " + Integer.toString(response.code()));
                 } else {
                     ChampionListDto listDto = response.body();
                     Map<String, ChampionDto> championsMap = listDto.getData();
@@ -63,7 +63,7 @@ public class ChampionsListImpl implements ChampionsListPresenter {
             @Override
             public void onFailure(Call<ChampionListDto> call, Throwable t) {
                 view.hideLoading();
-                view.showErrorMessage();
+                view.showErrorMessage("Unable to retrieve champions list.");
                 t.printStackTrace();
             }
         });
