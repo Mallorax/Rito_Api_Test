@@ -43,9 +43,6 @@ dependencies {
     compile "com.jakewharton:butterknife:8.0.1"
     annotationProcessor "com.jakewharton:butterknife-compiler:8.0.1"
 
-    // Lightweight Stream
-    compile 'com.annimon:stream:1.1.2'
-
     // Dependency Injection
     annotationProcessor "com.google.dagger:dagger-compiler:2.2"
     compile "com.google.dagger:dagger:2.2"
