@@ -1,4 +1,4 @@
-package pl.patrykzygo.hellomvp.model;
+package pl.patrykzygo.hellomvp.POJO;
 
 
 import java.util.Map;
