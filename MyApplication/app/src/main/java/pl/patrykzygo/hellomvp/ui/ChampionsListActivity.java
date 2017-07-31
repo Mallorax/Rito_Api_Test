@@ -16,7 +16,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.patrykzygo.hellomvp.R;
 import pl.patrykzygo.hellomvp.app.HelloMVPApplication;
-import pl.patrykzygo.hellomvp.model.ChampionDto;
+import pl.patrykzygo.hellomvp.POJO.ChampionDto;
 
 public class ChampionsListActivity extends AppCompatActivity implements ChampionsListView {
 

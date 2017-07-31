@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import pl.patrykzygo.hellomvp.R;
-import pl.patrykzygo.hellomvp.model.ChampionDto;
+import pl.patrykzygo.hellomvp.POJO.ChampionDto;
 
 public class ChampionsListAdapter extends RecyclerView.Adapter<ChampionsListAdapter.ChampionsViewHolder> {
 

@@ -3,7 +3,7 @@ package pl.patrykzygo.hellomvp.ui;
 
 import java.util.List;
 
-import pl.patrykzygo.hellomvp.model.ChampionDto;
+import pl.patrykzygo.hellomvp.POJO.ChampionDto;
 
 public interface ChampionsListView {
 

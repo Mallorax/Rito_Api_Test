@@ -12,8 +12,8 @@ import java.util.Map;
 import javax.inject.Inject;
 
 import pl.patrykzygo.hellomvp.app.HelloMVPApplication;
-import pl.patrykzygo.hellomvp.model.ChampionDto;
-import pl.patrykzygo.hellomvp.model.ChampionListDto;
+import pl.patrykzygo.hellomvp.POJO.ChampionDto;
+import pl.patrykzygo.hellomvp.POJO.ChampionListDto;
 import pl.patrykzygo.hellomvp.network.RiotApi;
 import retrofit2.Call;
 import retrofit2.Callback;
