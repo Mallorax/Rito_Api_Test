@@ -10,7 +10,9 @@ import pl.patrykzygo.hellomvp.app.Constants;
 import pl.patrykzygo.hellomvp.network.RiotApi;
 import retrofit2.Converter;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.schedulers.Schedulers;
 
 
 @Module
@@ -36,6 +38,8 @@ public class NetworkModule {
         return new Retrofit.Builder()
                 .baseUrl(baseUrl)
                 .addConverterFactory(converter)
+                .addCallAdapterFactory(RxJavaCallAdapterFactory
+                        .createWithScheduler(Schedulers.newThread()))
                 .build();
     }
 

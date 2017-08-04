@@ -40,7 +40,7 @@ public class ChampionsListActivity extends AppCompatActivity implements Champion
         championsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         presenter.setView(this);
-        presenter.getChampions();
+        presenter.showChampions();
     }
 
     @Override
@@ -54,7 +54,7 @@ public class ChampionsListActivity extends AppCompatActivity implements Champion
     }
 
     @Override
-    public void showChampions(List<ChampionDto> champions) {
+    public void attachChampions(List<ChampionDto> champions) {
         championsRecyclerView.setAdapter(new ChampionsListAdapter(champions));
         championsRecyclerView.getAdapter().notifyDataSetChanged();
     }

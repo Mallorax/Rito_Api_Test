@@ -9,6 +9,6 @@ public interface ChampionsListView {
 
     void showLoading();
     void hideLoading();
-    void showChampions(List<ChampionDto> champions);
+    void attachChampions(List<ChampionDto> champions);
     void showErrorMessage(String errorMessage);
 }
