@@ -1,8 +1,6 @@
 package pl.patrykzygo.hellomvp.ui;
 
 
-import java.util.Collections;
-
 import javax.inject.Inject;
 
 import pl.patrykzygo.hellomvp.repositories.RiotDataSource;
@@ -39,7 +37,6 @@ public class ChampionsListImpl implements ChampionsListPresenter {
         subscriptions.add(riotRepository.getChampions()
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe((championsList) ->{
-            Collections.sort(championsList, (p1, p2) -> p1.getName().compareTo(p2.getName()));
             view.attachChampions(championsList);
         }, throwable -> {
             throwable.printStackTrace();
