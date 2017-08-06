@@ -1,5 +1,6 @@
 package pl.patrykzygo.hellomvp.Dagger;
 
+
 import android.content.Context;
 
 import com.squareup.picasso.Picasso;
@@ -15,6 +16,6 @@ public class PicassoModule {
     @Provides
     @Singleton
     Picasso providesPicasso(Context context){
-        return Picasso.with(context);
+        return new Picasso.Builder(context).build();
     }
 }

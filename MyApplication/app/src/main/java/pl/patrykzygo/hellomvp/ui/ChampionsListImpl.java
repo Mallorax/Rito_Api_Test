@@ -5,6 +5,7 @@ import java.util.Collections;
 
 import javax.inject.Inject;
 
+import pl.patrykzygo.hellomvp.repositories.RiotDataSource;
 import pl.patrykzygo.hellomvp.repositories.RiotRepository;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.subscriptions.CompositeSubscription;
@@ -13,7 +14,7 @@ public class ChampionsListImpl implements ChampionsListPresenter {
 
 
     private ChampionsListView view;
-    private RiotRepository riotRepository;
+    private RiotDataSource riotRepository;
     private CompositeSubscription subscriptions;
 
     @Inject
@@ -35,7 +36,7 @@ public class ChampionsListImpl implements ChampionsListPresenter {
     }
 
     private void loadChampions(){
-        subscriptions.add(riotRepository.getChampionsWithImages()
+        subscriptions.add(riotRepository.getChampions()
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe((championsList) ->{
             Collections.sort(championsList, (p1, p2) -> p1.getName().compareTo(p2.getName()));

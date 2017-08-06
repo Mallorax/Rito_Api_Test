@@ -1,24 +1,35 @@
 package pl.patrykzygo.hellomvp.repositories;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
 
 import pl.patrykzygo.hellomvp.POJO.ChampionDto;
+import pl.patrykzygo.hellomvp.network.RiotApi;
 import rx.Observable;
 
-public class RiotRepository {
+public class RiotRepository implements RiotDataSource {
 
-    private RiotDataSource remoteDataSource;
 
+    private RiotApi riotApi;
 
     @Inject
-    public RiotRepository (RiotDataSource remoteDataSource){
-        this.remoteDataSource = remoteDataSource;
+    public RiotRepository(RiotApi riotApi){
+        this.riotApi = riotApi;
     }
 
-    public Observable<List<ChampionDto>> getChampionsWithImages(){
-       return remoteDataSource.getChampions();
+    @Override
+    public Observable<List<ChampionDto>> getChampions() {
+        return riotApi.getChampionsList()
+                .flatMap(riotResponse -> Observable.just(new ArrayList<>(riotResponse.getData().values())));
+
+    }
+
+    @Override
+    public ChampionDto getChampion(int id) {
+        //TODO implement
+        return null;
     }
 }

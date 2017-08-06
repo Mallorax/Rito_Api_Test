@@ -6,6 +6,7 @@ import android.app.Application;
 import com.squareup.leakcanary.LeakCanary;
 
 import pl.patrykzygo.hellomvp.Dagger.AppComponent;
+import pl.patrykzygo.hellomvp.Dagger.AppModule;
 import pl.patrykzygo.hellomvp.Dagger.DaggerAppComponent;
 
 
@@ -19,6 +20,7 @@ public class HelloMVPApplication extends Application{
 
     protected AppComponent initDagger(){
         return DaggerAppComponent.builder()
+                .appModule(new AppModule(this))
                 .build();
     }
 

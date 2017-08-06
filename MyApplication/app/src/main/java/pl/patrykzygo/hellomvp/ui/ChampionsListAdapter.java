@@ -1,7 +1,6 @@
 package pl.patrykzygo.hellomvp.ui;
 
 
-import android.content.Context;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,6 +13,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import pl.patrykzygo.hellomvp.POJO.ChampionDto;
 import pl.patrykzygo.hellomvp.R;
 import pl.patrykzygo.hellomvp.app.Constants;
@@ -21,12 +22,15 @@ import pl.patrykzygo.hellomvp.app.Constants;
 public class ChampionsListAdapter extends RecyclerView.Adapter<ChampionsListAdapter.ChampionsViewHolder> {
 
     private List<ChampionDto> champions;
-    private Context context;
+    private Picasso picasso;
 
+    @Inject
+    public ChampionsListAdapter(Picasso picasso) {
+        this.picasso = picasso;
+    }
 
-    public ChampionsListAdapter(List<ChampionDto> champions, Context context) {
+    public void setChampions(List<ChampionDto> champions){
         this.champions = champions;
-        this.context = context;
     }
 
     @Override
@@ -41,8 +45,7 @@ public class ChampionsListAdapter extends RecyclerView.Adapter<ChampionsListAdap
         ChampionDto champ = champions.get(position);
         holder.nameView.setText(champ.getName());
         holder.titleView.setText(champ.getTitle());
-        Picasso.with(context)
-                .load(Uri.parse("http://ddragon.leagueoflegends.com/cdn/"+ Constants.VERSION+"/img/champion/"+champ.getImage().getFull()))
+        picasso.load(Uri.parse("http://ddragon.leagueoflegends.com/cdn/"+ Constants.VERSION+"/img/champion/"+champ.getImage().getFull()))
                 .resize(64, 64)
                 .into(holder.imageView);
     }

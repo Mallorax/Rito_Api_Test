@@ -23,6 +23,9 @@ public class ChampionsListActivity extends AppCompatActivity implements Champion
     @Inject
     ChampionsListPresenter presenter;
 
+    @Inject
+    ChampionsListAdapter adapter;
+
     @BindView(R.id.champions_recycler_view)
     RecyclerView championsRecyclerView;
 
@@ -55,7 +58,8 @@ public class ChampionsListActivity extends AppCompatActivity implements Champion
 
     @Override
     public void attachChampions(List<ChampionDto> champions) {
-        championsRecyclerView.setAdapter(new ChampionsListAdapter(champions, this));
+        adapter.setChampions(champions);
+        championsRecyclerView.setAdapter(adapter);
         championsRecyclerView.getAdapter().notifyDataSetChanged();
     }
 
