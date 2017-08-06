@@ -4,29 +4,43 @@
     android:id="@+id/champion_list_item_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minHeight="50dp"
-    android:gravity="center"
-    android:orientation="vertical"
     android:layout_margin="4dp"
-    android:elevation="1dp"
-    android:clipToPadding="false"
     android:background="@color/list_item_background"
-    android:outlineProvider="background">
+    android:gravity="center_horizontal"
+    android:clipToPadding="false"
+    android:elevation="1dp"
+    android:orientation="horizontal"
+    android:outlineProvider="background"
+    android:padding="3dp">
+
+    <ImageView
+        android:id="@+id/champion_list_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:padding="8dp"
+        android:src="@mipmap/ic_launcher" />
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/champion_name_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
-        tools:text="Name" />
+        <TextView
+            android:id="@+id/champion_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            tools:text="Name" />
 
-    <TextView
-        android:id="@+id/champion_title_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Title" />
+        <TextView
+            android:id="@+id/champion_title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Title" />
+
+    </LinearLayout>
 
 </LinearLayout>

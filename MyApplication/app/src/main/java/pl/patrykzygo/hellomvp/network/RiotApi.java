@@ -9,6 +9,6 @@ import rx.Observable;
 
 public interface RiotApi {
 
-    @GET(Constants.CHAMPIONS_REQUEST + "&api_key=" + BuildConfig.RIOT_API_KEY)
+    @GET(Constants.STATIC_DATA + Constants.CHAMPIONS_WITH_IMAGES_REQUEST + "&api_key=" + BuildConfig.RIOT_API_KEY)
     Observable<ChampionListDto> getChampionsList();
 }

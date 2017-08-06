@@ -1,14 +1,24 @@
 package pl.patrykzygo.hellomvp.repositories;
 
+
 import java.util.List;
+
+import javax.inject.Inject;
 
 import pl.patrykzygo.hellomvp.POJO.ChampionDto;
 import rx.Observable;
 
-public interface RiotRepository {
+public class RiotRepository {
 
-    Observable<List<ChampionDto>> getChampions();
+    private RiotDataSource remoteDataSource;
 
-    ChampionDto getChampion(int id);
 
+    @Inject
+    public RiotRepository (RiotDataSource remoteDataSource){
+        this.remoteDataSource = remoteDataSource;
+    }
+
+    public Observable<List<ChampionDto>> getChampionsWithImages(){
+       return remoteDataSource.getChampions();
+    }
 }

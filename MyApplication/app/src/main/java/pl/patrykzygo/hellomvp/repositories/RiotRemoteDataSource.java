@@ -10,13 +10,13 @@ import pl.patrykzygo.hellomvp.POJO.ChampionDto;
 import pl.patrykzygo.hellomvp.network.RiotApi;
 import rx.Observable;
 
-public class RiotDataRepository implements RiotRepository {
+public class RiotRemoteDataSource implements RiotDataSource {
 
 
     private RiotApi riotApi;
 
     @Inject
-    public RiotDataRepository(RiotApi riotApi){
+    public RiotRemoteDataSource(RiotApi riotApi){
         this.riotApi = riotApi;
     }
 

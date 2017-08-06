@@ -17,8 +17,8 @@ public class ChampionsListImpl implements ChampionsListPresenter {
     private CompositeSubscription subscriptions;
 
     @Inject
-    public ChampionsListImpl(RiotRepository repository) {
-        this.riotRepository = repository;
+    public ChampionsListImpl(RiotRepository riotRepository) {
+        this.riotRepository = riotRepository;
         this.subscriptions = new CompositeSubscription();
     }
 
@@ -35,15 +35,15 @@ public class ChampionsListImpl implements ChampionsListPresenter {
     }
 
     private void loadChampions(){
-        subscriptions.add(riotRepository.getChampions()
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(champions -> {
-                    Collections.sort(champions, (p1, p2) -> p1.getName().compareTo(p2.getName()));
-                    view.attachChampions(champions);
-                }, throwable -> {
-                    throwable.printStackTrace();
-                    view.showErrorMessage("Failed to get Champions List");
-                }));
+        subscriptions.add(riotRepository.getChampionsWithImages()
+        .observeOn(AndroidSchedulers.mainThread())
+        .subscribe((championsList) ->{
+            Collections.sort(championsList, (p1, p2) -> p1.getName().compareTo(p2.getName()));
+            view.attachChampions(championsList);
+        }, throwable -> {
+            throwable.printStackTrace();
+            view.showErrorMessage("Failed to load the champions");
+        }));
     }
 }
 

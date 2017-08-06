@@ -6,6 +6,15 @@ public class ChampionDto {
 
     private String name;
     private String title;
+    private ImageDto image;
+
+    public ImageDto getImage() {
+        return image;
+    }
+
+    public void setImage(ImageDto image) {
+        this.image = image;
+    }
 
     public String getName() {
         return name;

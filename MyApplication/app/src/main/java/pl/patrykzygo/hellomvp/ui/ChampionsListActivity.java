@@ -14,9 +14,9 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import pl.patrykzygo.hellomvp.POJO.ChampionDto;
 import pl.patrykzygo.hellomvp.R;
 import pl.patrykzygo.hellomvp.app.HelloMVPApplication;
-import pl.patrykzygo.hellomvp.POJO.ChampionDto;
 
 public class ChampionsListActivity extends AppCompatActivity implements ChampionsListView {
 
@@ -55,7 +55,7 @@ public class ChampionsListActivity extends AppCompatActivity implements Champion
 
     @Override
     public void attachChampions(List<ChampionDto> champions) {
-        championsRecyclerView.setAdapter(new ChampionsListAdapter(champions));
+        championsRecyclerView.setAdapter(new ChampionsListAdapter(champions, this));
         championsRecyclerView.getAdapter().notifyDataSetChanged();
     }
 

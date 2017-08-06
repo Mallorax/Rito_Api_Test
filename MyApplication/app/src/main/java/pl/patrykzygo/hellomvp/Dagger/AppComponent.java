@@ -12,7 +12,8 @@ import pl.patrykzygo.hellomvp.ui.ChampionsListImpl;
         AppModule.class,
         NetworkModule.class,
         PresenterModule.class,
-        RepositoryModule.class
+        RepositoryModule.class,
+        PicassoModule.class
 })
 
 public interface AppComponent {

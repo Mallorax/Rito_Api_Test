@@ -8,6 +8,7 @@ import com.squareup.leakcanary.LeakCanary;
 import pl.patrykzygo.hellomvp.Dagger.AppComponent;
 import pl.patrykzygo.hellomvp.Dagger.DaggerAppComponent;
 
+
 public class HelloMVPApplication extends Application{
 
     private AppComponent appComponent;
